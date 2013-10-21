@@ -28,15 +28,18 @@ puremvc.define(
             view.notes.push({"id" : data.rows.item(i).id, "chapter" : data.rows.item(i).chapter, "note" : data.rows.item(i).note});            
         }
         this.element.innerHTML  = Mustache.render(this.template, view);
+        return;
     },
 	
 	filterHandler: function(){
 		var chapter = {num :document.getElementById("filter").value};	
 		this.dispatchEvent(new view.components.Event(this.constructor.FILTER, event.target, chapter));
+        return;
     },
 	
 	clearHandler: function(){
         this.dispatchEvent(new view.components.Event(this.constructor.CLEAR, event.target));
+        return;
     }
 }, 
 {   

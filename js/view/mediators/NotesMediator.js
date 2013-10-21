@@ -52,7 +52,6 @@ puremvc.define(
     },
 
     deleteSuccess: function() {
-        //this.refreshHandler();
         this.filterHandler();                      
     },    
 
