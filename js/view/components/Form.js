@@ -53,12 +53,21 @@ puremvc.define(
     },
 	
 	editNoteHandler: function(note){      
+<<<<<<< HEAD
         CSS.addClass(this.insert, "hidden");
 		CSS.removeClass(this.update, "hidden");
         this.note_id.value = note.id;
         this.chapter.options[note.chapter].selected = 'selected';   
         this.note.value = note.note; 
         return;
+=======
+        CSS.addClass(this.insertButtonUI, "hidden");
+		CSS.removeClass(this.updateButtonUI, "hidden");
+        this.idnote = note.id;
+        this.chapterUI.options[note.chapter].selected = 'selected';   
+        this.noteUI.value = note.note;
+         return;
+>>>>>>> b9828bdeaeb5321f27cea1f0aa2901728ba292c6
     }
 }, 
 {   
