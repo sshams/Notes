@@ -35,7 +35,7 @@ puremvc.define(
             noteVO = {note: this.note.value, chapter: this.chapter.value};
             this.dispatchEvent(new view.components.Event(this.constructor.INSERT, event.target, noteVO)); 
         } 
-		this.formUI.reset();       
+		this.form.reset();       
         return;
 	},
 	
@@ -46,28 +46,19 @@ puremvc.define(
             var noteVO  = {id : this.note_id.value, note : this.note.value, chapter : this.chapter.value};            
             this.dispatchEvent(new view.components.Event(this.constructor.UPDATE, event.target, noteVO));
         }
-        this.formUI.reset();
+        this.form.reset();
         CSS.removeClass(this.insert, "hidden");
         CSS.addClass(this.update, "hidden");
 		return;
     },
 	
-	editNoteHandler: function(note){      
-<<<<<<< HEAD
+	editNoteHandler: function(note){
         CSS.addClass(this.insert, "hidden");
 		CSS.removeClass(this.update, "hidden");
         this.note_id.value = note.id;
         this.chapter.options[note.chapter].selected = 'selected';   
         this.note.value = note.note; 
         return;
-=======
-        CSS.addClass(this.insertButtonUI, "hidden");
-		CSS.removeClass(this.updateButtonUI, "hidden");
-        this.idnote = note.id;
-        this.chapterUI.options[note.chapter].selected = 'selected';   
-        this.noteUI.value = note.note;
-         return;
->>>>>>> b9828bdeaeb5321f27cea1f0aa2901728ba292c6
     }
 }, 
 {   

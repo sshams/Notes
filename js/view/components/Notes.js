@@ -34,20 +34,12 @@ puremvc.define(
 	filterHandler: function(){
 		var chapter = {num :document.getElementById("filter").value};	
 		this.dispatchEvent(new view.components.Event(this.constructor.FILTER, event.target, chapter));
-<<<<<<< HEAD
         return;
-=======
-		 return;
->>>>>>> b9828bdeaeb5321f27cea1f0aa2901728ba292c6
     },
 	
 	clearHandler: function(){
         this.dispatchEvent(new view.components.Event(this.constructor.CLEAR, event.target));
-<<<<<<< HEAD
         return;
-=======
-         return;
->>>>>>> b9828bdeaeb5321f27cea1f0aa2901728ba292c6
     }
 }, 
 {   
