@@ -57,7 +57,8 @@ puremvc.define(
 		CSS.removeClass(this.updateButtonUI, "hidden");
         this.idnote = note.id;
         this.chapterUI.options[note.chapter].selected = 'selected';   
-        this.noteUI.value = note.note;       
+        this.noteUI.value = note.note;
+         return;
     }
 }, 
 {   
