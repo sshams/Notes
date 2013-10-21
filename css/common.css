@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+html, body {
+	height: 100%;
+}
+body {
+	background-color:#CECECE;
+}
+.truefalse .answer, .multichoice .answer {
+	margin: 0 0 0 5px;
+}
+.multichoice p {
+	display: inline-block;
+}

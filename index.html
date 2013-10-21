@@ -1,0 +1,87 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title></title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" type="text/css" href="css/normalize.css">
+<link rel="stylesheet" href="css/main.css">
+<script src="js/_libs/puremvc-1.0.1.min.js"></script>
+<script src="js/_libs/mustache.min.js"></script>
+<script src="js/_libs/TagComponent.js"></script>
+<script src="js/ApplicationFacade.js"></script>
+<script src="js/controller/StartupCommand.js"></script>
+<script src="js/model/Positivo.js"></script>
+<script src="js/model/InitProxy.js"></script>
+<script src="js/model/NoteProxy.js"></script>
+<script src="js/view/mediators/FormMediator.js"></script>
+<script src="js/view/components/Form.js"></script>
+<script src="js/view/mediators/NotesMediator.js"></script>
+<script src="js/view/components/Notes.js"></script>
+<title>Notes</title>
+</head>
+
+<body>
+<form class="form" id="form">
+  <p class="select">
+    <select name="chapter" id="chapter">
+      <option value= ''>--Select Chapter--</option>
+      <option value= 1>1</option>
+      <option value= 2>2</option>
+      <option value= 3>3</option>
+      <option value= 4>4</option>
+    </select>
+  </p>
+  <p class="text">
+    <textarea cols="80" rows="10" id= "note" placeholder="Text of the Note"></textarea>
+  </p>
+  <p class="submit">
+    <input name="Update" type="button" id="insert" value="Insert" insert="true" class="">
+    <input name="Update" type="button" id="update" value="Update" insert="true" class="hidden">
+  </p>
+</form>
+<p class="select">
+  <select id="filter">
+    <option value= ''>--Filter by Chapter--</option>
+    <option value= 1>1</option>
+    <option value= 2>2</option>
+    <option value= 3>3</option>
+    <option value= 4>4</option>
+  </select>
+  <input type="button" id="clear" value="Clear">
+</p>
+<div id="container" >
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Chapter</th>
+        <th>Note</th>
+        <th></th>
+        <th></th>
+      </tr>
+    </thead>
+    <tbody id="notes">
+    </tbody>
+  </table>
+</div>
+<script id="notesTemplate" type="template/mustache">
+{{#notes}}
+<tr>
+  <td>{{chapter}}</td>
+  <td>{{note}}</td>
+  <td><p class="submit"><input type='button' value='Edit' onclick='ApplicationFacade.getInstance("Notes").editNote("{{id}}")' name='edit'/></p>
+  </td>
+  <td><p class="submit"><input type='button' value='Delete' onclick='ApplicationFacade.getInstance("Notes").deleteNote("{{id}}")' name='delete'/></p>
+  </td>
+</tr>
+{{/notes}}
+</script> 
+<script type="text/javascript">
+    window.onload = function() {
+    ApplicationFacade.getInstance("Notes").startup();
+    }
+</script>
+</body>
+</html>
