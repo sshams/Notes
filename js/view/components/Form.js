@@ -15,24 +15,24 @@ puremvc.define(
    
     constructor: function(elementID) {        
         view.components.TagComponent.call(this, document.getElementById(elementID));
-		this.formUI = document.getElementById("form");
-		this.chapterUI = document.getElementById("chapter");
-		this.noteUI = document.getElementById("note");
-		this.insertButtonUI = document.getElementById("insert");
-		this.updateButtonUI = document.getElementById("update");				
-        this.addEventHandler(this.insertButtonUI, events.MouseEvent.CLICK, Delegate.create(this, this.insertHandler));   
-        this.addEventHandler(this.updateButtonUI, events.MouseEvent.CLICK, Delegate.create(this, this.updateHandler)); 
+		this.form = document.getElementById("form");
+		this.chapter = document.getElementById("chapter");
+		this.note = document.getElementById("note");
+		this.insert = document.getElementById("insert");
+		this.update = document.getElementById("update");
+        this.note_id = document.getElementById("note_id");				
+        this.addEventHandler(this.insert, events.MouseEvent.CLICK, Delegate.create(this, this.insertHandler));   
+        this.addEventHandler(this.update, events.MouseEvent.CLICK, Delegate.create(this, this.updateHandler)); 
         
     }
 },
-{
-    idnote: null,
+{  
     /* Instance Methods and variables */	
     insertHandler: function(event) {
-        if(this.noteUI.value == "" || this.chapterUI.value == ""){
+        if(this.note.value == "" || this.chapter.value == ""){
             alert("Please enter the text of the note or select a Chapter"); 
         } else {
-            noteVO = {note: this.noteUI.value, chapter: this.chapterUI.value};
+            noteVO = {note: this.note.value, chapter: this.chapter.value};
             this.dispatchEvent(new view.components.Event(this.constructor.INSERT, event.target, noteVO)); 
         } 
 		this.formUI.reset();       
@@ -40,24 +40,24 @@ puremvc.define(
 	},
 	
     updateHandler: function(event) {      
-        if(this.noteUI.value == "" || this.chapterUI.value == ""){
+        if(this.note.value == "" || this.chapter.value == ""){
             alert("Please enter the text of the note or select a Chapter"); 
         } else {
-            var noteVO  = {id : this.idnote, note : this.noteUI.value, chapter : this.chapterUI.value};            
+            var noteVO  = {id : this.note_id.value, note : this.note.value, chapter : this.chapter.value};            
             this.dispatchEvent(new view.components.Event(this.constructor.UPDATE, event.target, noteVO));
         }
         this.formUI.reset();
-        CSS.removeClass(this.insertButtonUI, "hidden");
-        CSS.addClass(this.updateButtonUI, "hidden");
+        CSS.removeClass(this.insert, "hidden");
+        CSS.addClass(this.update, "hidden");
 		return;
     },
 	
 	editNoteHandler: function(note){      
-        CSS.addClass(this.insertButtonUI, "hidden");
-		CSS.removeClass(this.updateButtonUI, "hidden");
-        this.idnote = note.id;
-        this.chapterUI.options[note.chapter].selected = 'selected';   
-        this.noteUI.value = note.note; 
+        CSS.addClass(this.insert, "hidden");
+		CSS.removeClass(this.update, "hidden");
+        this.note_id.value = note.id;
+        this.chapter.options[note.chapter].selected = 'selected';   
+        this.note.value = note.note; 
         return;
     }
 }, 
