@@ -35,8 +35,6 @@ puremvc.define(
             noteVO = {note: this.note.value, chapter: this.chapter.value};
             this.dispatchEvent(new view.components.Event(this.constructor.INSERT, event.target, noteVO)); 
         } 
-		this.form.reset();       
-        return;
 	},
 	
     updateHandler: function(event) {      
@@ -46,10 +44,7 @@ puremvc.define(
             var noteVO  = {id : this.note_id.value, note : this.note.value, chapter : this.chapter.value};            
             this.dispatchEvent(new view.components.Event(this.constructor.UPDATE, event.target, noteVO));
         }
-        this.form.reset();
-        CSS.removeClass(this.insert, "hidden");
-        CSS.addClass(this.update, "hidden");
-		return;
+
     },
 	
 	editNoteHandler: function(note){
@@ -58,8 +53,13 @@ puremvc.define(
         this.note_id.value = note.id;
         this.chapter.options[note.chapter].selected = 'selected';   
         this.note.value = note.note; 
-        return;
-    }
+    },
+	
+	resetFormHandler: function(){
+		this.form.reset();
+        CSS.removeClass(this.insert, "hidden");
+        CSS.addClass(this.update, "hidden");
+	}
 }, 
 {   
     /* Static methods and variables */

@@ -34,7 +34,7 @@ puremvc.define(
 			this.chapterActive = event.body.num;
 		}
 		if(this.chapterActive!=null){
-        	this.noteProxy.filter(this.chapterActive,Delegate.create(this, this.selectSuccess), Delegate.create(this, this.selectFail));                  
+        	this.noteProxy.selectByChapter(this.chapterActive,Delegate.create(this, this.selectSuccess), Delegate.create(this, this.selectFail));                  
 		}
     },
 	
@@ -82,7 +82,7 @@ puremvc.define(
     handleNotification: function(notification) {
         switch(notification.getName()) {
             case ApplicationFacade.REFRESH_DATA:
-        		this.noteProxy.filter(this.chapterActive,Delegate.create(this, this.selectSuccess), Delegate.create(this, this.selectFail));		
+        		this.noteProxy.selectByChapter(this.chapterActive,Delegate.create(this, this.selectSuccess), Delegate.create(this, this.selectFail));		
                 break;
             case ApplicationFacade.DELETE_NOTE:
                 this.noteProxy.delete(notification.getBody(), Delegate.create(this, this.deleteSuccess), Delegate.create(this, this.deleteFail));                  

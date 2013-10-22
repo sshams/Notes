@@ -15,7 +15,7 @@ puremvc.define(
         this.database = model.Positivo.getPositivo();
     },
 
-    filter: function(chapter, success, fail) {    
+    selectByChapter: function(chapter, success, fail) {    
         var insertSQL = "SELECT * FROM Notes WHERE chapter = ?";           
         this.database.readTransaction(function (t) {
                 t.executeSql(insertSQL, [chapter],success, fail);

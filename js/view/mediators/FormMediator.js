@@ -30,7 +30,8 @@ puremvc.define(
     },  
 //Success callbacks
     insertSuccess: function() {
-        console.log('insert success function');
+        console.log('insert or update success');
+		this.viewComponent.resetFormHandler(); 
         this.facade.sendNotification(ApplicationFacade.REFRESH_DATA);
     }, 
 
