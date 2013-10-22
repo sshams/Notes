@@ -1,0 +1,67 @@
+[33mcommit 06398c701891bef1721af36ace4e8efa8e6a13e2[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Tue Oct 22 15:21:11 2013 +0000
+
+    change name filter function, create handler for reset form
+
+[33mcommit 5cce5e7ea69d34957fc877c6f356815f9cfaa40f[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 14:16:27 2013 -0400
+
+    update the opendatabase function in Positivo
+
+[33mcommit 43b7be72d425fb30619b8bef82f0e257878e5df6[m
+Merge: aec497b b9828bd
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 13:01:21 2013 -0400
+
+    change names ui elements
+
+[33mcommit aec497b19521abbece803803a28960f576325689[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:42:23 2013 -0400
+
+    add input for id of note updated
+
+[33mcommit b9828bdeaeb5321f27cea1f0aa2901728ba292c6[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:25:24 2013 -0400
+
+    add return syntax
+
+[33mcommit 2b17e27420f26f792c4d1c25edda73a620187508[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:24:30 2013 -0400
+
+    add return syntax
+
+[33mcommit ca4c712789d1eac2403bd0a3cb05bb083e5e9b94[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:23:33 2013 -0400
+
+    Delete extras Comments
+
+[33mcommit 26634baa2308ceabd518d1d534d202c9d35634c3[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:19:13 2013 -0400
+
+    delete extra comments
+
+[33mcommit 10e0fa5a9863ce6a1e6cab97831125dd480f6db7[m
+Merge: 3843a63 9abd773
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 12:11:34 2013 -0400
+
+    Merge github.com:sshams/Notes
+
+[33mcommit 3843a636d14c97bf0c201063aa5e0085ef587105[m
+Author: dpuigerarde <dpuigerarde@gmail.com>
+Date:   Mon Oct 21 11:49:48 2013 -0400
+
+    initial commit
+
+[33mcommit 9abd773ae92408d7e8b75cfb69274033759c65ed[m
+Author: sshams <saad@muizz.com>
+Date:   Mon Oct 21 06:58:45 2013 -0700
+
+    Initial commit
