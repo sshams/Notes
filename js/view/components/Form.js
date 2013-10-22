@@ -47,12 +47,13 @@ puremvc.define(
 
     },
 	
-	editNoteHandler: function(note){
+
+	editNoteHandler: function(note){ 
         CSS.addClass(this.insert, "hidden");
 		CSS.removeClass(this.update, "hidden");
         this.note_id.value = note.id;
         this.chapter.options[note.chapter].selected = 'selected';   
-        this.note.value = note.note; 
+        this.note.value = note.note;
     },
 	
 	resetFormHandler: function(){

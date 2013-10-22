@@ -1,4 +1,3 @@
-
 puremvc.define(
 {
     name: 'model.Positivo',
