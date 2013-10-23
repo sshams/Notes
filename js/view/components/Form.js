@@ -23,7 +23,7 @@ puremvc.define(
         this.note_id = document.getElementById("note_id");				
         this.addEventHandler(this.insert, events.MouseEvent.CLICK, Delegate.create(this, this.insertHandler));   
         this.addEventHandler(this.update, events.MouseEvent.CLICK, Delegate.create(this, this.updateHandler)); 
-        
+
     }
 },
 {  
@@ -46,7 +46,6 @@ puremvc.define(
         }
 
     },
-	
 
 	editNoteHandler: function(note){ 
         CSS.addClass(this.insert, "hidden");
@@ -56,7 +55,7 @@ puremvc.define(
         this.note.value = note.note;
     },
 	
-	resetFormHandler: function(){
+	reset: function(){
 		this.form.reset();
         CSS.removeClass(this.insert, "hidden");
         CSS.addClass(this.update, "hidden");
