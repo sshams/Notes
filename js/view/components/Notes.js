@@ -45,8 +45,6 @@ puremvc.define(
     DELETE: "delete",
     REFRESH: "refresh",
 	FILTER: "filterone",
-    CLEAR: "clear"
-    //Custom type event name for dispatching events to it's Mediator (FieldsMediator)
-    
+    CLEAR: "clear"    
 }
 );
